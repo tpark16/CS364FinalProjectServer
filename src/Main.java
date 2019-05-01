@@ -7,6 +7,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.math.BigInteger;
 
 public class Main {
 
@@ -37,10 +38,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-        System.out.println(getQuote());
-        System.out.println(getQuote());
-
         ServerSocket sock;
         Socket client;
         BufferedReader from;
@@ -62,12 +59,21 @@ public class Main {
             to = new PrintWriter(client.getOutputStream(),
                     true);
 
+//            while (true) {
+//                System.out.println("me: ");
+//                String s = kbd.nextLine();
+//                to.println(s);
+//                String response = from.readLine();
+//                System.out.println(response);
+//            }
+            Random rnd = new Random();
+            BigInteger a = new BigInteger(30, 3, rnd);
+            System.out.println(a);
             while (true) {
-                System.out.println("me: ");
-                String s = kbd.nextLine();
-                to.println(s);
-                String response = from.readLine();
-                System.out.println(response);
+
+                from.readLine();
+                System.out.println("Received quote request from client");
+                System.out.println("Sending ");
             }
 
         } catch (IOException e) {
