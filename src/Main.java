@@ -67,14 +67,25 @@ public class Main {
 //                System.out.println(response);
 //            }
             Random rnd = new Random();
-            BigInteger a = new BigInteger(30, 3, rnd);
-            System.out.println(a);
-            while (true) {
 
-                from.readLine();
-                System.out.println("Received quote request from client");
-                System.out.println("Sending ");
+
+            while (true) {
+                BigInteger a = new BigInteger(15, 3, rnd);
+                BigInteger b = new BigInteger(15, 3, rnd);
+                BigInteger first = a.multiply(b);
+
+                BigInteger c = new BigInteger(15, 3, rnd);
+                BigInteger d = new BigInteger(15, 3, rnd);
+                BigInteger second = c.multiply(d);
+
+                System.out.println(from.readLine());
+
+                System.out.println("Sending " + first + ", " + second + " to client");
+
+                to.println(first);
+                to.println(second);
             }
+
 
         } catch (IOException e) {
             e.printStackTrace();
