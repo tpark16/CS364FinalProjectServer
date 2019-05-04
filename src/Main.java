@@ -84,6 +84,20 @@ public class Main {
 
                 to.println(first);
                 to.println(second);
+
+                int firstFactor = Integer.parseInt(from.readLine());
+                int secondFactor = Integer.parseInt(from.readLine());
+
+                System.out.println("received factors " + firstFactor + ", " + secondFactor);
+                System.out.println("verifying factors");
+
+                if (first.intValue()%firstFactor == 0 && second.intValue()%secondFactor == 0) {
+                    to.println("correct");
+                    System.out.println("Sending \"correct\"");
+                    String quote = getQuote();
+                    System.out.println("sending quote: \"" + quote + "\"");
+                    to.println(quote);
+                }
             }
 
 
