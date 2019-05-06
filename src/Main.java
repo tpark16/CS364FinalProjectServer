@@ -59,13 +59,6 @@ public class Main {
             to = new PrintWriter(client.getOutputStream(),
                     true);
 
-//            while (true) {
-//                System.out.println("me: ");
-//                String s = kbd.nextLine();
-//                to.println(s);
-//                String response = from.readLine();
-//                System.out.println(response);
-//            }
             Random rnd = new Random();
 
 
