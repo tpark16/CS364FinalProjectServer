@@ -46,7 +46,7 @@ public class Main {
             sock = new ServerSocket(12345);
             System.out.println("Waiting for connection...");
             client= sock.accept();
-            System.out.println("Connected to" +
+            System.out.println("Connected to " +
                     client.getInetAddress());
             from = new BufferedReader(
                     new InputStreamReader(
