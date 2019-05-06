@@ -6,7 +6,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 import java.math.BigInteger;
 
 public class Main {
@@ -42,7 +41,6 @@ public class Main {
         Socket client;
         BufferedReader from;
         PrintWriter to;
-        Scanner kbd = new Scanner(System.in);
 
         try {
             sock = new ServerSocket(12345);
@@ -63,21 +61,20 @@ public class Main {
 
 
             while (true) {
-                BigInteger a = new BigInteger(15, 3, rnd);
-                BigInteger b = new BigInteger(15, 3, rnd);
+                BigInteger a = new BigInteger(13, 3, rnd);
+                BigInteger b = new BigInteger(13, 3, rnd);
                 BigInteger first = a.multiply(b);
 
-                BigInteger c = new BigInteger(15, 3, rnd);
-                BigInteger d = new BigInteger(15, 3, rnd);
+                BigInteger c = new BigInteger(13, 3, rnd);
+                BigInteger d = new BigInteger(13, 3, rnd);
                 BigInteger second = c.multiply(d);
 
                 System.out.println(from.readLine());
 
-                System.out.println("Sending " + first + ", " + second + " to client");
-
                 to.println(first);
                 to.println(second);
 
+                System.out.println("Sending " + first + ", " + second + " to client");
                 int firstFactor = Integer.parseInt(from.readLine());
                 int secondFactor = Integer.parseInt(from.readLine());
 
