@@ -61,12 +61,12 @@ public class Main {
 
 
             while (true) {
-                BigInteger a = new BigInteger(13, 3, rnd);
-                BigInteger b = new BigInteger(13, 3, rnd);
+                BigInteger a = new BigInteger(31, 3, rnd);
+                BigInteger b = new BigInteger(31, 3, rnd);
                 BigInteger first = a.multiply(b);
 
-                BigInteger c = new BigInteger(13, 3, rnd);
-                BigInteger d = new BigInteger(13, 3, rnd);
+                BigInteger c = new BigInteger(31, 3, rnd);
+                BigInteger d = new BigInteger(31, 3, rnd);
                 BigInteger second = c.multiply(d);
 
                 System.out.println(from.readLine());
@@ -75,13 +75,13 @@ public class Main {
                 to.println(second);
 
                 System.out.println("Sending " + first + ", " + second + " to client");
-                int firstFactor = Integer.parseInt(from.readLine());
-                int secondFactor = Integer.parseInt(from.readLine());
+                Long firstFactor = Long.parseLong(from.readLine());
+                Long secondFactor = Long.parseLong(from.readLine());
 
                 System.out.println("received factors " + firstFactor + ", " + secondFactor);
                 System.out.println("verifying factors");
 
-                if (first.intValue()%firstFactor == 0 && second.intValue()%secondFactor == 0) {
+                if (first.longValue()%firstFactor == 0 && second.longValue()%secondFactor == 0) {
                     to.println("correct");
                     System.out.println("Sending \"correct\"");
                     String quote = getQuote();
